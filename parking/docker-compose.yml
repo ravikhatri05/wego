@@ -1,0 +1,15 @@
+version: '2'
+services:
+  message-server:
+    container_name: parking-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: parking-server:latest
+    ports:
+      - 8080:8080
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
